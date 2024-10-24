@@ -1,36 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <title>Previsão do Tempo</title>
+    <title>weather dev</title>
 </head>
 <body>
+    <div id="container">
+        <form id="search">
+                 <i class="fa-solid fa-location-dot"></i>
+                <input type="search" name="city-name" id="city-name" placeholder="Buscar Cidade">
+            <button type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form>
 
-    <div class="caixa-maior">
-       <input class="input-cidade" placeholder="digite o nome da cidade">
-       <button class="botao-busca" onclick="cliqueiNoBotao()">
-            <img class="img-busca" alt="buscar" src="https://www.svgrepo.com/show/488200/find.svg">
-       </button>
+        <div id="weather">
+            <h1 id="title">Campina Grande, BR</h1>
 
-    <div class="caixa-media">
-       <h2 class="cidade">Digite a Cidade desejada...</h2>
+            <div id="infos">
+                <div id="temp">
+                    <img id= "temp-img" src="http://openweathermap.org/img/wn/04d@2x.png" alt="">
 
-       <p class="temp">°C</p> 
+                    <div>
+                        <p id="temp-value">32 <sup>°C</sup></p>
+                        <p id="temp-description">Ensolarado</p>
+                    </div>
+                </div>
 
+                    
+                <div id="other-infos">
+                    <!--temp maximo-->
+                    <div class="info">
+                        <i id="temp-max-icon" class="fa-solid fa-temperature-high"></i>
 
-    <div class="caixa-menor">
-        <img class="img-previsao" src=""> 
-        <p class="texto-previsao">tempo</p>
+                        <div>
+                            <h2>Temp. max</h2>
+
+                            <p id="temp-max">
+                                32 <sup>°C</sup>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!--temp minimo-->
+                    <div class="info">
+                        <i id="temp-min-icon" class="fa-solid fa-temperature-low"></i>
+
+                        <div>
+                            <h2>Temp. min</h2>
+
+                            <p id="temp-min">
+                                32 <sup>°C</sup>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!--humdade-->
+                    <div class="info">
+                        <i id="humidity-icon" class="fa-solid fa-droplet"></i>
+
+                        <div>
+                            <h2>Humidade</h2>
+
+                            <p id="humidity">
+                               50%
+                            </p>
+                        </div>
+                    </div>
+
+                    <!--vento-->
+                    <div class="info">
+                        <i id="wind-icon" class="fa-solid fa-wind"></i>
+
+                        <div>
+                            <h2>Vento</h2>
+
+                            <p id="wind">
+                                50 km/h 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="alert"></div>
     </div>
-
-        <p class="Umidade">Umidade</p>
-    </div>
-    </div>
+    <script src="./script.js"></script>
 </body>
 </html>
