@@ -1,27 +1,52 @@
+document.querySelector('#search').addEventListener('submit', async (event) => {
+    event.preventDefault();
 
+    const cityName = document.querySelector('#city-name').value; // Corrigido aqui
 
- const key = "847e13edd8fa34b0df67fb4df4eaef6b"
+    if (!cityName) {
+        return showAlert('Você precisa digitar uma cidade...');
+    }
 
+    const apikey = '847e13edd8fa34b0df67fb4df4eaef6b';
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(cityName)}&appid=${apikey}&units=metric&lang=pt_br`;
 
- function colocarDadosNaTela(dados) {
-    console.log(dados)
-    document.querySelector(".cidade").innerHTML = "tempo em " + dados.name
-    document.querySelector(".temp").innerHTML = Math.floor(dados.main.temp) + "°c"
-    document.querySelector(".texto-previsao").innerHTML = dados.weather[0].description
-    document.querySelector(".Umidade").innerHTML = "Umidade: " + dados.main.humidity + "%"
-    document.querySelector(".img-previsao").src = `https://openweathermap.org/img/wn/${dados.weather[0].icon}.png`
- } 
+    const results = await fetch(apiUrl);
+    const json = await results.json();
 
+    if (json.cod === 200) {
+        showinfos({
+            city: json.name,
+            country: json.sys.country,
+            temp: json.main.temp,
+            tempMax: json.main.temp_max,
+            tempMin: json.main.temp_min,
+            description: json.weather[0].description,
+            tempIcon: json.weather[0].icon,
+            windspeed: json.wind.speed,
+            humidity: json.main.humidity,
+        });
+    } else {
+        showAlert(`Não foi possivel localizar... <img src="./images/404.svg"/>`)
+    }
+});
 
-async function buscarCidade(cidade) {
-    const dados = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${key}&lang=pt_br&units=metric`).then( resposta => resposta.json())
+function showinfos(json){
+    showAlert('');
 
-    colocarDadosNaTela(dados)
-   
-}    
+    document.querySelector("#weather").classList.add('show');
 
-function cliqueiNoBotao() {
-    const cidade = document.querySelector(".input-cidade").value
+    document.querySelector('#title').innerHTML = `${json.city}, ${json.country}`;
 
-    buscarCidade(cidade)
-} 
+    document.querySelector('#temp-value').innerHTML = `${json.temp.toFixed(1).toString().replace('.', ',')} <sup>°C</sup>`;
+    document.querySelector('#temp-description').innerHTML = `${json.description}`
+    document.querySelector('#temp-img').setAttribute('src', `http://openweathermap.org/img/wn/${json.tempIcon}@2x.png`);
+
+    document.querySelector('#temp-max').innerHTML = `${json.tempMax.toFixed(1).toString().replace('.', ',')}`;
+    document.querySelector('#temp-min').innerHTML = `${json.tempMin.toFixed(1).toString().replace('.', ',')}`;
+    document.querySelector('#humidity').innerHTML = `${json.humidity}%`;
+    document.querySelector('#wind').innerHTML = `${json.wind.windspeed.toFixed(1)} Km/h`;
+}
+
+function showAlert(msg) {
+    document.querySelector('#alert').innerHTML = msg;
+}
