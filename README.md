@@ -30,7 +30,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-Oprojeto foi criando para que eu possa aprender mais coisas sobre as tecnologias citada anteriomente.
+O projeto foi criado para que eu pudesse aperfeiçoar mais nas tecnologias citada anteriomente.
 
 ## 🔖 Créditos
 
