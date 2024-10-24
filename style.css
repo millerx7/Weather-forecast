@@ -1,79 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
+    font-family: 'poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Open Sans", sans-serif;
 }
+
 body {
-    height: 100vh;
-    width: 100vw;
     display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    background-image: url(https://images.unsplash.com/photo-1495757450029-09dbedacbc36?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
-
+    width: 100vh;
+    background-image: url(./images/bg-paisagem.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+ 
+    width: 100%;
+    height: 100%; 
 }
 
-.caixa-maior {
-    background-color: rgb(0,0,0,0.8);
-    border-radius: 25px;
-    padding: 20px;
-    color:aliceblue;
-    width: 400px;
-    height: 350px;
-    width: 95%;
-    max-width: 450px;
+#container {
+    margin-top: 6%;
+    width: 450px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 10px;
 }
 
-.input-cidade {
+#search {
+    display: flex;
+    align-self: center;
+    gap: 8px;
+    border: 1px solid #bdbdbd;
+    border-radius: 10px;
+    padding: 4px 12px;
+}
+
+#search input {
     border: none;
-    outline: none;
-    padding: 10px;
-    border-radius: 25px;
-    font-size: 18px;
-    background-color: #7c7c7c2b;
-    width: calc(100% - 100px);
+    background-color: transparent;
+    font-size: 16px;
+    width: 100%;
 }
 
-.botao-busca {
-    border: none;
+#search input:focus-visible {
     outline: none;
-    padding: 10px; 
-    border-radius: 50px;
-    background-color: #7c7c7c2b;
+}
+
+#search button {
+    background-color: transparent;
+    border: none;
     cursor: pointer;
-    float: right;
-    
 }
 
-.img-busca {
-    width: 30px;
-}
-
-.caixa-media {
-    margin-top: 30px;
-}
-.input-cidade {
-    color: #ffffff;
-    font-size: 28px;
-    font-weight: 300;
-}
-.temp {
-    font-size: 20px;
-    color: #ffffff;
+#weather {
+    display: none;
     margin-top: 20px;
 }
-.caixa-menor {
+
+#weather.show {
+    display: block;
+}
+
+#weather #title {
+    text-align: center;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #372f3f;
+}
+
+#temp {
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    justify-content: space-around;
+    gap: 20px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    background-color: transparent;
+   color: #fff;
+   border-radius: 20px;
+   padding: 20px;
 }
-.texto-previsao {
-    color: #ffffff;
-    margin-left: 20px;
+
+#temp-img {
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
+}
+
+#temp-value {
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 55px;
+}
+
+#temp-description {
+    font-weight: 500;
     text-transform: capitalize;
 }
-.Umidade {
-    color: #ffffff;
+
+#other-infos {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+#other-infos .info {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 4px 10px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    background-color: transparent;
+   gap: 10px;
+}
+
+
+#other-infos .info h2 {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+#other-infos .info i {
+    text-align: center;
+    font-size: 20px;
+    width: 20%;
+}
+
+#temp-max-icon {
+    color: #7f1d1d;
+}
+
+#temp-min-icon {
+    color: #0284c7;
+}
+
+#humidity-icon {
+    color: #0ea5e9;
+}
+
+#wind-icon {
+    color: #7c3aed;
+}
+
+#alert {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#alert img {
+    width: 100px;
     margin-top: 20px;
 }
