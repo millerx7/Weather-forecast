@@ -1,40 +1,15 @@
-<h1 align="center"> Previsão do Tempo </h1>
+# Weather Forecast
 
-<p align="center">
-Com intuito de aprender mais sobre HTML, CSS, JAVASCRIPT e API, resolvi fazer uma aplicação de previsão do tempo totalmente funcional.
-</p>
+[Site do Weather Forecast](https://millerx7.github.io/Weather-forecast/) 
 
-<p align="center">
-  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-créditos">créditos</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</p>
+## Índice
+- O projeto foi criado com o intuito de aprender mais sobre html, css e javascript e uso de API.
+- Sinta-se à vontade para contribuir com este projeto! Se você encontrou um bug ou tem uma sugestão de melhoria, entre em contato.
+- Este projeto está sob a licença MIT.
+- E-mail: guilhermemiller.dev@gmail.com
+- LinkedIn: [millerx7](https://www.linkedin.com/in/millerx7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app)
 
-<br>
+## Sobre o Projeto
 
-<p align="center">
-  <img alt="Projeto previsao do tempo" src="./projeto-previsao-do-tempo.jpeg" width="100%">
-</p>
-
-
-
-## 🚀 Tecnologias
-
-Esse projeto foi desenvolvido com as seguintes tecnologias:
-
-- HTML e CSS
-- JavaScript
-- API
-- Git e Github
-
-
-## 💻 Projeto
-
-O projeto foi criado para que eu pudesse aperfeiçoar mais nas tecnologias citada anteriomente.
-
-## 🔖 Créditos
-
-A ideia do projeto partiu partiu do [canal Dev club | Programçao](https://www.youtube.com/@canaldevclub) tendo a instrução de Rodolfo Mori.
-
-
----
+- **Tecnologias**: Html, css e JavaScript, API.
+- **Funcionalidades**: O projeto tem como funcionalidade saber a Temperatura atul, a Minima, a Maxima, a Humidade e o Vento.
